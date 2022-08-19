@@ -6,7 +6,7 @@ const Layout = styled.div`
   padding-bottom: 1.5rem;
   align-items: center;
   > strong {
-    min-width: 5rem;
+    min-width: 6rem;
   }
 `;
 

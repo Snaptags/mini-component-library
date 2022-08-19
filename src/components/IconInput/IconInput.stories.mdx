@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
-import IconInput from './IconInput';
+import IconInput from './IconInput'; import DocsLayout from "../ProgressBar/DocsLayout";
 
 <Meta
   title="IconInput"
@@ -34,14 +34,39 @@ export const Template = (args) => <IconInput {...args} />;
 
 # IconInput
 
+This component allows us to add one of two icons to a text input.
+
 <Story
-  name="Default"
-  args={{
-    placeholder: 'Search…',
-    label: 'Search',
-    icon: 'search',
-    size: 'small',
-  }}
+    name="Default"
+    args={{
+        placeholder: 'Search…',
+        label: 'Search',
+        icon: 'search',
+        size: 'small',
+    }}
 >
-  {Template.bind({})}
+    {Template.bind({})}
 </Story>
+
+It comes in two sizes:
+
+<DocsLayout title="Small"><IconInput size="small" placeholder="Search…" /></DocsLayout>
+<DocsLayout title="Large"><IconInput size="large" placeholder="Search…" /></DocsLayout>
+
+The placeholder is a lighter gray and a thinner font than the filled-in contents:
+<DocsLayout title="Placeholder"><IconInput size="small" placeholder="Search…" /></DocsLayout>
+<DocsLayout title="Filled in"><IconInput size="small" value="Cat toys" /></DocsLayout>
+
+It can be given an explicit `width` property:
+<DocsLayout title="300px"><IconInput size="small" width={300} placeholder="Search…" /></DocsLayout>
+<DocsLayout title="150px"><IconInput size="small" width={150} placeholder="Search…" /></DocsLayout>
+
+Different icons can be supplied:
+<IconInput icon="at-sign" size="large" value="name@domain.com" />
+
+For focus, we use the default outline with an offset.
+
+On hover, it darkens the entered text and the icon (but not the placeholder text)
+
+The component has a visually-hidden label.
+The user can click on the icon to focus the input.
