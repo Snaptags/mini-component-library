@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 import { COLORS } from "../../constants";
 import Icon from "../Icon";
-import { getDisplayedValue } from "./Select.helpers";
+import { getDisplayedValue } from "./getDisplayedValue";
 
 const NativeSelect = styled.select`
   position: absolute;
