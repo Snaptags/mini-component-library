@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import ProgressBar from './ProgressBar';
+import DocsLayout from "./DocsLayout";
 
 <Meta
   title="ProgressBar"
@@ -21,10 +22,26 @@ import ProgressBar from './ProgressBar';
   }}
 />
 
-export const Template = (args) => <ProgressBar {...args} />;
-
 # ProgressBar
 
-<Story name="Default" args={{ value: 50, size: 'medium' }}>
-  {Template.bind({})}
+Our ProgressBar component accepts a `value` prop, and supports numbers from 0 to 100. There are no animations.
+
+<Story name="Default" args={{ value: 50, size: 'large' }}>
+    {ProgressBar.bind({})}
+</Story>
+
+It is accessible.
+
+The ProgressBar comes in 3 sizes, note to inner padding of the largest size:
+
+<Story name="Large" parameters={{ controls: { disabled: true } }} >
+    <DocsLayout title="Large"><ProgressBar value={50} size="large" /></DocsLayout>
+</Story>
+
+<Story name="Medium" parameters={{ controls: { disabled: true } }} >
+    <DocsLayout title="Medium"><ProgressBar value={50} size="medium" /></DocsLayout>
+</Story>
+
+<Story name="Small" parameters={{ controls: { disabled: true } }} >
+    <DocsLayout title="Small"><ProgressBar value={50} size="small" /></DocsLayout>
 </Story>
