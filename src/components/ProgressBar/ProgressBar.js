@@ -17,8 +17,8 @@ const Bar = styled.div`
   width: ${WIDTH}px;
   height: ${(props) => getHeight(props.size)}px;
 
-  background: rgba(128, 128, 128, 0.15);
-  box-shadow: inset 0 2px 4px rgba(128, 128, 128, 0.35);
+  background: ${COLORS.transparentGray15};
+  box-shadow: inset 0 2px 4px ${COLORS.transparentGray35};
   border-radius: ${(props) => (props.size === "large" ? 8 : 4)}px;
   display: inline-block;
 `;
@@ -37,7 +37,7 @@ const Progress = styled.div`
       WIDTH - (WIDTH / 100) * props.value,
       props.size === "large" ? 4 : 0
     )}px;
-  background: #4747eb;
+  background: ${COLORS.primary};
   border-radius: 4px
     ${(props) => `${radius(props.value)} ${radius(props.value)}`} 4px;
 `;
