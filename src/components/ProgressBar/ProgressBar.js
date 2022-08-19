@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import styled, { css } from "styled-components";
 
@@ -44,7 +43,9 @@ const Progress = styled.div`
 
 const ProgressBar = ({ value, size }) => (
   <Bar size={size} role="progressbar" aria-valuenow={value}>
-    <Progress size={size} value={value} />
+    <Progress size={size} value={value}>
+      <VisuallyHidden>{`${value}%`}</VisuallyHidden>
+    </Progress>
   </Bar>
 );
 
