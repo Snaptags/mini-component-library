@@ -5,6 +5,8 @@ import Select from './Select';
 
 # Select
 
+Our Select lets us pick a single option from a list:
+
 export const ManagedSelect = () => {
   const [value, setValue] = React.useState('newest');
   return (
@@ -20,6 +22,20 @@ export const ManagedSelect = () => {
   );
 };
 
+export const SingleSelect = ({children}) => (
+    <Select value="single" label="Single" >
+        <option value="single">{children}</option>
+    </Select>
+);
+
 <Story name="Default">
   <ManagedSelect />
 </Story>
+
+The width of this element depends on the length of the currently selected option:
+
+<SingleSelect>Really long selected option!</SingleSelect> <SingleSelect>Price</SingleSelect>
+
+When clicked it uses the system default `<select>` UI.
+
+It has a focus state (default outline), and a hover state (text and icon become darker).
